@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <default>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <name>js/oag_recaptcha/functions.js</name>
+                <params/>
+            </action>
+        </reference>
+    </default>
+    <customer_account_create>
+        <reference name="after_body_start">
+            <block type="oag_recaptcha/script" name="oag-recaptcha-script" as="oag-recaptcha-script" template="oag_recaptcha/persistent/customer/form/recaptcha/script.phtml"/>
+        </reference>
+        <reference name="customer_form_register">
+            <block type="oag_recaptcha/recaptcha" name="oag-recaptcha-register" as="oag-recaptcha-register" template="oag_recaptcha/persistent/customer/form/register.phtml">
+                <action method="setCacheLifetime">
+                    <lifetime>86400</lifetime> <!-- Cache Lifetime of 1 day -->
+                </action>
+            </block>
+        </reference>
+    </customer_account_create>
+</layout>

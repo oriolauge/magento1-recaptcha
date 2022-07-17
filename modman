@@ -1,0 +1,9 @@
+app/code/community/OAG/Recaptcha
+app/etc/modules/OAG_Recaptcha.xml
+app/design/frontend/base/default/template/oag_recaptcha
+app/design/frontend/base/default/layout/oag_recaptcha.xml
+skin/frontend/base/default/js/oag_recaptcha/functions.js
+app/locale/en_US/OAG_Recaptcha.csv
+app/locale/es_ES/OAG_Recaptcha.csv
+app/locale/it_IT/OAG_Recaptcha.csv
+app/locale/pt_PT/OAG_Recaptcha.csv

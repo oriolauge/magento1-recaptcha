@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <OAG_Recaptcha>
+            <active>true</active>
+            <codePool>community</codePool>
+        </OAG_Recaptcha>
+    </modules>
+</config>

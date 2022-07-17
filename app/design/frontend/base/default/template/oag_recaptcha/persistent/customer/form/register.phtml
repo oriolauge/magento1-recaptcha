@@ -1,0 +1,28 @@
+<?php
+/**
+ * OAG recaptcha register script template
+ *
+ * @category   OAG
+ * @package    OAG_Recaptcha
+ *
+ */
+?>
+<div id="recaptcha-register" class="g-recaptcha"></div>
+<script type="text/javascript">
+    document.observe("recaptcha:loaded", function() {
+        oagRecaptchaWidgetRegisterId = grecaptcha.render('recaptcha-register', {
+            'sitekey' : '<?php echo $this->getSiteKey() ?>',
+            'callback' : oagSubmitCustomerRegisterForm,
+            'size' : 'invisible',
+            'badge' : 'inline'
+        });
+
+        Event.observe(dataForm.form.id, 'submit', function(e) {
+            if (dataForm.validator.validate()) {
+                grecaptcha.execute(oagRecaptchaWidgetRegisterId);
+            }
+            Event.stop(e);
+            return false;
+        });
+    });
+</script>
